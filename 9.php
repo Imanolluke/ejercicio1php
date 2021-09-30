@@ -15,28 +15,23 @@ un 5%, entre 10.000 y 20.000 un 8%, entre 20.000 y 40.000 un
  </p>
 <?php
 
+$comision=0;
+$ventas = 12000;
 
-$num  = 4;
-$star=1;
-if($num%2==0){
-    $num = $num+1;
+if($ventas <10000){
+    $comision = 5;
+}else if($ventas>=10000 && $ventas <20000){
+    $comision = 8;
+}else if($ventas>=20000 && $ventas <40000){
+    $comision = 10;
+}else if($ventas>=40000){
+    $comision = 13;
 }
 
-for($i=1; $i<$num;$i++){
- 
-    for($x=$num-$i;$x>1;$x--){
-        echo "&nbsp&nbsp";
-    }
-         for($j = 0;$j<$star; $j++){
-           
-            echo "*";
-            
-        }
-  
-    
-    $star = $star+2;
-    echo "<br>";
-}
+echo "las ventas has sido de: " . $ventas . " por lo que
+la comision será de :" . $comision . "%";
+
+
 
 
 
